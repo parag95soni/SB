@@ -1,0 +1,18 @@
+Controller Installtion :
+
+sh install-controller.sh --controller-file /opt/universal-controller-6.7.0.0-build.123.war --dbpass sb --dburl 'jdbc:mysql://10.192.69.4:3306/' --dbuser sb@123 --rdbms mysql --tomcat-dir /opt/apache-tomcat-7.0.109
+
+Note : Always Create new user for db.
+
+Agent Installtion :
+
+sh ./unvinst --user ubroker --userdir /home/ubroker --group usergroup 
+             --keystore no --convert_opsagent --opsdir /homedir/ops 
+             --oms_servers 7878@oms2 --oms_port 7878 --oms_autostart yes 
+             --ac_agent_clusters GA Cluster,CA Cluster --ac_agent_ip 127.0.0.1
+             --ac_netname OPSAUTOCONF --ac_enable_ssl yes --opscli yes 
+             --uag_autostart yes --usermode_install yes --unvdir /opt/universal 
+             --unvcfgdir /etc/universal --unvdatadir /var/opt/universal --unvport 7887
+
+sh ./unvinst --user ubroker --userdir /home/ubroker --create_user yes --group ubroker --create_group yes --oms_servers 7878@10.192.69.6 --oms_port 7878 --oms_autostart yes --ac_netname OPSAUTOCONF --ac_enable_ssl yes --opscli yes --usermode_install yes --unvdir /opt/universal --unvcfgdir /etc/universal --unvdatadir /var/opt/universal --unvport 7887
+
